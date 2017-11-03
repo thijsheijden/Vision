@@ -33,12 +33,12 @@
                     <navigationItem key="navigationItem" id="fFr-I5-UKD">
                         <barButtonItem key="rightBarButtonItem" systemItem="camera" id="rSy-5o-dh4">
                             <connections>
-                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="y18-tk-4uN"/>
+                                <action selector="cameraTapped:" destination="BYZ-38-t0r" id="pNn-mR-xrd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageView" destination="PGL-fY-IXo" id="w2K-5S-O11"/>
+                        <outlet property="imageView" destination="PGL-fY-IXo" id="5jk-cj-P4f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
