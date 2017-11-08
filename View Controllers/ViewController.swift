@@ -20,7 +20,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = .photoLibrary
         imagePicker.allowsEditing = false
         
     }
@@ -56,11 +56,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         //send a request to the network to identify the image
         let request = VNCoreMLRequest(model: model) { (request, error) in
-            guard let results = request.results as? [VNClassificationObservation] else {
-                fatalError("Model failed to load image")
-        }
-        
-            print(results)
+            
+            if let results = request.results as? [VNClassificationObservation] {
+                print("your results are of type VNClassificationObservation")
+            }
+            
+            if let results = request.results as? [VNPixelBufferObservation] {
+                print("your results are of type VNPixelBufferObservation")
+            }
+            
+            if let results = request.results as? [VNCoreMLFeatureValueObservation] {
+                print("your results are of type VNCoreMLFeatureValueObservation")
+            }
 
             //checking the results from the network
 //            if let firstResult = results.first {
